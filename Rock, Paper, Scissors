@@ -1,0 +1,93 @@
+
+import random
+Rock = """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+Paper = """
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+"""
+Scissor = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+choose = [Rock , Paper , Scissor]
+C_choose = choose[random.randint(0,2)]
+U_choose = ""
+A = input("""Welcome to the Rock , Paper , scissors   game:
+press Enter to continue or type(Help) for the rules : """).capitalize()
+if A == "Help":
+    print("""\n**********RULES**********
+            1) You choose and the computer chooses
+            2) Rock smashes Scissors -> Rock wins
+            3) Scissors cut Paper -> Scissors win
+            4) Paper covers Rock -> Paper wins
+        """)
+
+U_choose = input("\nEnter your choose (Rock , Paper , Scissor) : ").capitalize()
+
+if U_choose == "Rock":
+    U_choose = choose[0]
+
+if U_choose == "Paper":
+    U_choose = choose[1]
+
+if U_choose == "Scissor":
+    U_choose = choose[2]
+
+print(f"""
+        you choose
+        {U_choose}
+
+        and Computer choose
+        {C_choose}
+        """)
+
+if U_choose==Rock:
+    if C_choose==Scissor:
+        print("You win")
+    
+    elif C_choose==Paper:
+        print("You lose")
+
+    else :
+        print("You are Equals")
+       
+elif U_choose==Paper:
+    if C_choose==Scissor:
+        print("You  lose")
+    
+    elif C_choose==Paper:
+        print("You are Equals")
+
+    else :
+        print("You  win")
+
+elif U_choose==Scissor:
+    if C_choose==Scissor:
+        print("You are Eqعals")
+    
+    elif C_choose==Paper:
+        print("You win")
+
+    else :
+        print("You lose")
+
+
+else:
+  print(f"The value you put in is not True")
+
